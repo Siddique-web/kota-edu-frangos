@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; color-scheme: dark; }
+  body {
+    @apply bg-coal text-neutral-100 font-sans antialiased;
+    background-image:
+      radial-gradient(900px 400px at 85% -10%, rgba(220,38,38,.16), transparent 60%),
+      radial-gradient(700px 400px at -10% 0%, rgba(245,158,11,.08), transparent 55%);
+    background-attachment: fixed;
+    overscroll-behavior-y: none;
+  }
+  button { @apply select-none; -webkit-tap-highlight-color: transparent; }
+  input, textarea, select { @apply text-base; } /* 16px evita zoom no iOS */
+  ::selection { background: rgba(220,38,38,.5); }
+  *::-webkit-scrollbar { height: 8px; width: 8px; }
+  *::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 8px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+}
+
+@layer components {
+  .tap { @apply min-h-[44px] min-w-[44px]; }
+  .card { @apply rounded-2xl border border-coal-600 bg-coal-800/90 backdrop-blur-sm; }
+  .card-pad { @apply card p-4; }
+  .btn {
+    @apply tap inline-flex items-center justify-center gap-2 rounded-xl px-4 font-semibold transition
+           active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+  .btn-primary { @apply btn bg-ember text-white shadow-ember hover:bg-ember-600; }
+  .btn-gold { @apply btn bg-gold text-coal font-bold hover:bg-gold-400; }
+  .btn-ghost { @apply btn border border-coal-500 bg-coal-700 text-neutral-100 hover:bg-coal-600; }
+  .btn-sm { @apply min-h-[44px] px-3 text-sm; }
+  .input {
+    @apply tap w-full rounded-xl border border-coal-500 bg-coal-900 px-3.5 text-neutral-100 placeholder:text-neutral-500
+           focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400; }
+  .err { @apply mt-1.5 text-sm text-ember-400; }
+  .chip { @apply tap inline-flex shrink-0 snap-start items-center gap-1.5 rounded-full border px-4 text-sm font-semibold transition; }
+  .chip-off { @apply border-coal-500 bg-coal-800 text-neutral-300 hover:bg-coal-700; }
+  .chip-on { @apply border-ember bg-ember text-white shadow-ember; }
+  .pill { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 0px); }
+}

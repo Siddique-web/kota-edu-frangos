@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Kota Edu Frangos",
+    "slug": "kota-edu-frangos",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "kotaedu",
+    "splash": { "backgroundColor": "#111111" },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "co.mz.kotaedu",
+      "infoPlist": { "NSCameraUsageDescription": "A câmara é usada para ler o QR Code da sua mesa." }
+    },
+    "android": {
+      "package": "co.mz.kotaedu",
+      "permissions": ["CAMERA", "VIBRATE"],
+      "adaptiveIcon": {
+        "backgroundColor": "#111111",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "plugins": [
+      ["expo-camera", { "cameraPermission": "A câmara é usada para ler o QR Code da sua mesa." }]
+    ]
+  }
+}

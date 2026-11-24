@@ -1,0 +1,27 @@
+{
+  "name": "kota-edu-frangos",
+  "private": true,
+  "version": "1.0.0",
+  "description": "KOTA EDU FRANGOS \u2014 REI DOS MOLHOS \u00b7 Monorepo React (Web) + React Native (Expo) com n\u00facleo partilhado",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @kota/web",
+    "web": "npm run dev -w @kota/web",
+    "build": "npm run build -w @kota/web",
+    "web:build": "npm run build -w @kota/web",
+    "preview": "npm run preview -w @kota/web",
+    "mobile": "npm run start -w @kota/mobile",
+    "test": "npm run test -w @kota/shared",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

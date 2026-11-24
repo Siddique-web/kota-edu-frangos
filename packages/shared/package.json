@@ -1,0 +1,19 @@
+{
+  "name": "@kota/shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Núcleo partilhado: tipos, cardápio, molhos, carrinho/upsell, store em tempo real, analytics",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "~19.3.0",
+    "vitest": "^3.2.4"
+  }
+}
